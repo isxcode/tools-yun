@@ -22,8 +22,8 @@
             <img :src="card.logo" alt="Logo">
           </div>
           <div class="card-content" @click="goToLink(card.link);">
-            <h3 class="card-name">{{ card.name }}</h3>
             <p class="card-description">{{ card.description }}</p>
+            <h3 class="card-name">{{ card.name }}</h3>
           </div>
         </div>
         <div v-if="currentCategoryCards.length === 0">该分类下没有卡片。</div>
@@ -38,23 +38,59 @@ export default {
     return {
       isHovered: false,
       rotation: 0,
-      currentCategory: '视频',
+      currentCategory: 'AI',
       categories: [
+        {
+          id: 0, name: 'AI', cards: [
+            {
+              id: 1,
+              logo: 'logo1.png',
+              name: 'Poe',
+              description: 'ChatGPT3.5',
+              link: 'https://poe.com/ChatGPT',
+            },
+            {
+              id: 2,
+              logo: 'logo2.png',
+              name: 'Bard',
+              description: 'google的ai chat',
+              link: 'https://bard.google.com/chat',
+            },
+            {
+              id: 3,
+              logo: 'logo2.png',
+              name: 'Copilot',
+              description: '微软的ai chat',
+              link: 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx',
+            },
+          ]
+        },
         {
           id: 1, name: '视频', cards: [
             {
               id: 1,
               logo: 'logo1.png',
-              name: 'Card 1',
-              description: 'Card 1的功能介绍',
-              link: 'https://baidu.com'
+              name: 'BiliBili',
+              description: '哔哩哔哩',
+              link: 'https://www.bilibili.com/',
+            },
+          ]
+        },
+        {
+          id: 1, name: '后端', cards: [
+            {
+              id: 1,
+              logo: 'logo1.png',
+              name: 'Maven仓库',
+              description: 'maven仓库',
+              link: 'https://mvnrepository.com/'
             },
             {
               id: 2,
               logo: 'logo2.png',
-              name: 'Card 2',
-              description: 'Card 2的功能介绍',
-              link: 'https://baidu.com'
+              name: 'Docker hub',
+              description: 'docker仓库',
+              link: 'https://hub.docker.com/'
             },
             // 添加更多卡片...
           ]
@@ -64,9 +100,265 @@ export default {
             // 前端分类下的卡片
           ]
         },
-        // 添加更多分类...
+        {
+          id: 3, name: '加密', cards: [
+            {
+              id: 1,
+              logo: 'logo2.png',
+              name: '密码生成器',
+              description: '生成密码',
+              link: 'https://www.bchrt.com/tools/suijimima/'
+            },
+          ]
+        },
+        {
+          id: 4, name: '书籍', cards: [
+            {
+              id: 1,
+              logo: 'logo2.png',
+              name: 'Z-library',
+              description: '免费书籍',
+              link: 'https://zh.z-library.se/'
+            },
+          ]
+        },
+        {
+          id: 5, name: '音乐', cards: [
+            {
+              id: 1,
+              logo: 'logo2.png',
+              name: 'musicenc',
+              description: '免费歌词',
+              link: 'https://www.musicenc.com/'
+            },
+          ]
+        },
+        {
+          id: 6, name: '游戏', cards: [
+            {
+              id: 1,
+              logo: 'logo2.png',
+              name: '在线小霸王',
+              description: '免费GBA在线游戏',
+              link: 'https://www.yikm.net/'
+            },
+            {
+              id: 2,
+              logo: 'logo2.png',
+              name: 'GBA专区',
+              description: '免费GBA下载',
+              link: 'http://gbayouxi.ysepan.com/',
+            },
+          ]
+        },
+        {
+          id: 8, name:
+              '导航合集', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: 'TBox导航',
+                  description: '在线链接合集',
+                  link: 'https://www.tboxn.com/'
+                },
+                {
+                  id: 2,
+                  logo: 'logo2.png',
+                  name: '奇迹秀工具箱',
+                  description: '在线工具箱合集',
+                  link: 'https://www.qijishow.com/down/index.html'
+                },
+                {
+                  id: 3,
+                  logo: 'logo2.png',
+                  name: '图钉AI导航',
+                  description: '在线AI链接合集',
+                  link: 'https://www.tudingai.com/'
+                },
+              ]
+        }
+        ,
+        {
+          id: 9, name:
+              'VPN', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: '东方网络',
+                  description: '科学翻墙VPN',
+                  link: 'https://panel3.touhou.tel/'
+                },
+              ]
+        }
+        ,
+        {
+          id: 10, name:
+              '转换', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: 'Unicode转码',
+                  description: '在线Unicode编码转换',
+                  link: 'https://www.jyshare.com/front-end/3602/',
+                },
+              ]
+        }
+        ,
+        {
+          id: 11, name:
+              '镜像仓库', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: '阿里巴巴官网镜像站',
+                  description: '阿里巴巴免费镜像合集',
+                  link: 'https://developer.aliyun.com/mirror/',
+                },
+              ]
+        },
+        {
+          id: 12, name:
+              '画图', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: 'draw.io',
+                  description: '免费流程图在线编辑工具',
+                  link: 'https://app.diagrams.net/',
+                },
+                {
+                  id: 2,
+                  logo: 'logo2.png',
+                  name: 'Muse',
+                  description: '免费文件传输',
+                  link: 'https://musetransfer.com/',
+                },
+                {
+                  id: 3,
+                  logo: 'logo2.png',
+                  name: 'MoreCopy',
+                  description: '免费文件传输',
+                  link: 'https://air.9998k.cn/',
+                },
+              ]
+        }
+        , {
+          id: 12, name:
+              '传输', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: 'Muse',
+                  description: '免费文件传输',
+                  link: 'https://musetransfer.com/',
+                },
+                {
+                  id: 2,
+                  logo: 'logo2.png',
+                  name: 'MoreCopy',
+                  description: '免费文件传输',
+                  link: 'https://air.9998k.cn/',
+                },
+              ]
+        },
+        {
+          id: 16, name:
+              '转换', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: 'converter',
+                  description: 'PNG转SVG',
+                  link: 'https://converter.app/png-to-svg/result.php?lang=cn',
+                },
+                {
+                  id: 2,
+                  logo: 'logo2.png',
+                  name: 'aigei',
+                  description: '图片去底色',
+                  link: 'https://www.aigei.com/bgremover/',
+                },
+                {
+                  id: 3,
+                  logo: 'logo2.png',
+                  name: 'aigei',
+                  description: 'PNG转PDF',
+                  link: 'http://www.pdfdo.com/image-to-pdf.aspx',
+                },
+                {
+                  id: 4,
+                  logo: 'logo2.png',
+                  name: 'smallpdf',
+                  description: 'WORD转PDF',
+                  link: 'https://smallpdf.com/cn/word-to-pdf',
+                },
+              ]
+        }
+        ,
+        {
+          id: 13, name:
+              '会员', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: '逮虾户',
+                  description: '会员顺风车',
+                  link: 'https://daixiahu.co/#/buses',
+                }
+              ]
+        }
+        ,
+        {
+          id: 14, name:
+              '在线编辑', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: 'Arya',
+                  description: 'Markdown在线编辑',
+                  link: 'https://markdown.lovejade.cn/',
+                }
+              ]
+        }
+        ,
+        {
+          id: 15, name:
+              '通信', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: 'sms-activate',
+                  description: '短信激活通讯',
+                  link: 'https://sms-activate.org/en',
+                }
+              ]
+        },
+        {
+          id: 16, name:
+              '文件生成', cards:
+              [
+                {
+                  id: 1,
+                  logo: 'logo2.png',
+                  name: 'patorjk',
+                  description: 'Banner生成器',
+                  link: 'https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something',
+                }
+              ]
+        }
       ],
-    };
+    }
+        ;
   },
   computed: {
     currentCategoryCards() {

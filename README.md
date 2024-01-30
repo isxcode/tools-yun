@@ -1,75 +1,22 @@
-# Nuxt 3 Minimal Starter
+####
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
-
-Make sure to install the dependencies:
+#### 安装pnpm
 
 ```bash
-# npm
-npm install
+brew install fnm
+fnm install v18.14.2
+fnm use v18.14.2
+npm install pnpm -g
+```
 
-# pnpm
+#### 启动
+
+```bash
+git clone https://github.com/isxcode/tools-yun.git
+cd tools-yun
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm dev -o
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+####
