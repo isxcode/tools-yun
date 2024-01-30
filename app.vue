@@ -45,7 +45,7 @@ export default {
             {
               id: 1,
               logo: 'logo1.png',
-              name: 'poe(ChatGPT3.5)',
+              name: 'Poe',
               description: 'ChatGPT3.5',
               link: 'https://poe.com/ChatGPT',
             },
