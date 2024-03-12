@@ -130,3 +130,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# idea配置不提交
+.idea/**
+!.idea/icon.svg

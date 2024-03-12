@@ -269,7 +269,7 @@ export default {
         },
         {
           id: 16, name:
-              '转换', cards:
+              '转换格式', cards:
               [
                 {
                   id: 1,
@@ -298,6 +298,13 @@ export default {
                   name: 'smallpdf',
                   description: 'WORD转PDF',
                   link: 'https://smallpdf.com/cn/word-to-pdf',
+                },
+                {
+                  id: 5,
+                  logo: 'logo2.png',
+                  name: 'convertio',
+                  description: '文件转换',
+                  link: 'https://convertio.co/zh/',
                 },
               ]
         }
